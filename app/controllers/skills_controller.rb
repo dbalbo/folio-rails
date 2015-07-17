@@ -19,4 +19,25 @@ class SkillsController < ApplicationController
 		else
 			render :new
 		end
-	end				
+
+	def update 
+		@skill = Skill.find(params[:id])
+		if@skill.update(skill_params)
+			flash[:notice] = "Skill updated!"
+			redirect_to skill_path(@skill)
+		else
+			render :edit
+		end
+	def destroy
+		@skill = Skill.find(params[:id])
+		@skill.destroy
+		flash[:notice] = "Skill = DESTROYED!"
+		redirect_to root_path
+	end
+	
+	private
+	def skill_params
+		params.rewire(:skill).permit(:name, :description);
+	end
+							
+end				
