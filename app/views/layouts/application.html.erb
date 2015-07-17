@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class='flash'>
+		<%= flash[:notice] %>
+		<%= flash[:alert] %>
+
+</div>
+	<nav class="navbar navbar-default">
+		<ul class="nav navbar-nav">
+			<li><%= link_to "Home", root_path %></li>
+		</ul>
+	</nav>
+	<div class="container">		
 
 <%= yield %>
 
