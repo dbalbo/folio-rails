@@ -1,0 +1,33 @@
+<section class="row profile">
+	<aside class="col-md-4">
+		<%= image_tag("debbie1b&w-1.jpg", class: "picture") %>
+	</aside>
+	<article class="col-md-8 description">
+		<h3>About:</h2>
+		<p>
+			Hi. My name is Debbie and I am an aspiring web developer who is interested in Education via creating and teaching new ways of learning code, and in Project Management. I have a diverse background that I hope to be able to incorporate with my new coding skills in order to bring a contributing value to any organization. 
+			Also, I have some mad food and wine paring skills, if that is your thing (and in my opinion, it <em>should</em> be). 
+		</p>
+		<p>
+			 I am currently finishing my studies at Epicodus where we are learning Ruby, Rails, Javascript, Ember.js, among other things like databases (postgres) and version control (git). 
+		</p>
+	</article>
+</section>
+<section>
+	<h2>Skills</h2>
+
+	<% if @skills.any? %>
+		<ul>
+			<% @skills.each do |skill| %>
+				<li><%= link_to skill.name, skill_path(skill) %></li>
+			<% end %>
+		</ul>
+	<% else %>
+		<p>I have no damn skills right now.</p>
+	<% end %>
+	<% if can? :manage, Skill %>
+		<ul class="nav nav-pills">
+			<li role="presentation"><%= link_to "Add a new skill", new_skill_path %></li>
+		</ul>
+	<% end %>
+</section>
