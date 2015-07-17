@@ -19,6 +19,7 @@ class SkillsController < ApplicationController
 		else
 			render :new
 		end
+	end	
 
 	def update 
 		@skill = Skill.find(params[:id])
@@ -28,6 +29,8 @@ class SkillsController < ApplicationController
 		else
 			render :edit
 		end
+	end
+		
 	def destroy
 		@skill = Skill.find(params[:id])
 		@skill.destroy
@@ -39,5 +42,6 @@ class SkillsController < ApplicationController
 	def skill_params
 		params.rewire(:skill).permit(:name, :description);
 	end
+end
 							
-end				
+			

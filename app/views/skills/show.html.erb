@@ -1,30 +1,26 @@
+<% content_for(:title, "Skill | Portfolio") %>
 
-<h3><%= @skill.name %></h3>
-<div>
-	<p>
-		<%= @skill.description %>
-	</p>
+<div class'block'>
+	<h1><%= @skill.name %></h1>
+	<p><%= @skill.description %></p>
+
+	<%if @skill.projects.any? %>
+	<h4>Here are some Projects:</h4>
+	<ul>
+		<% @skill.projects.each do |project| %>
+		<li><%= link_to project.name, project_path(project) %></li>
+		<% end %>
+	</ul>
+	<% end %>	
+
 </div>
+	<div class="block path">
+		<p><%= link_to "Add a Project", new_project_path %></p>
+		<p><%= link_to "Edit Skill", edit_skill_path(@skill) %></p>
+		<p><%= link_to "Delete this Skill", skill_path(@skill), 
+						:data => {:confirm => "You sure you want to remove a SKILL?",
+							:method => 'delete'} %></p>	
 
-<div>
-	<h4>Projects</h4>
-	<% if @projects.any? %>
-		<ul>
-			<% @projects.each do |project| %>
-				<li><%= link_to project.name, skill_project_path(@skill, project) %></li>
-			<% end %>
-		</ul>
-	<% else %>
-		No projects are currently started. Someone give me a project and pay me money to do it!
 	<% end %>
-</div>
-
-<% if can? :manage, Skill, Project %>
-	<div class="admin">
-		<ul class="nav nav-pills">
-			<li role="presentation"><%= link_to "Add a project", new_skill_project_path(@skill) %></li>
-			<li role="presentation"><%= link_to "Edit", edit_skill_path(@skill) %></li>
-			<li role="presentation"><%= link_to "Delete", skill_path(@skill), data: {confirm: 'Are you sure?'}, method: :delete %></li>
-		</ul>
-	</div>
-<% end %>
+	<p><%=link_to "Return to Skills", skills_path %></p>
+</div>	
