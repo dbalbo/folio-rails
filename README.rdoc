@@ -24,5 +24,5 @@ A Portfolio to be shown to potential employers that will show my skill set and p
 
 COPYRIGHT 2015
 LICENSING
-MIT lisense 
-If you really want this--pleaase take it and use at your leisure/
+MIT license
+If you really want this--please take it and use at your leisure.
