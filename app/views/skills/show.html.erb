@@ -14,13 +14,12 @@
 	<% end %>	
 
 </div>
-	<div class="block path">
-		<p><%= link_to "Add a Project", new_project_path %></p>
+		<p><%= link_to "Add a Project", new_skill_project_path, %></p>
 		<p><%= link_to "Edit Skill", edit_skill_path(@skill) %></p>
-		<p><%= link_to "Delete this Skill", skill_path(@skill), 
+		<p><%= link_to "Delete this Skill", skill_path(@skill)
 						:data => {:confirm => "You sure you want to remove a SKILL?",
 							:method => 'delete'} %></p>	
 
-	<% end %>
+	
 	<p><%=link_to "Return to Skills", skills_path %></p>
 </div>	

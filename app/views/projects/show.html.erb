@@ -1,0 +1,26 @@
+<% content_for(:title, "Project | Portfolio") %>
+
+<div class="block">
+  <h1><%= @project.name %></h1>
+  <p>Description: <%= @project.description %></p>
+  <p>Link: <%= link_to "Github", "http://#{@project.link}" %></p>
+
+  <% if @project.skills.any? %>
+    <h4>here are the skills I used to create this project:</h4>
+    <ul>
+      <% @project.skills.each do |skill| %>
+        <li><%= skill.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+</div>
+<div class="block path">
+    <p><%= link_to "Edit Project", edit_project_path(@project) %></p>
+    <p><%= link_to "Remove this project", project_path(@project),
+                      :data => {:confirm => "You REALLY want to remove this project?",
+                                :method => "delete"} %></p>
+  <% end %>
+  <p><%= link_to "Return to Projects", projects_path %></p>
+<div>

@@ -12,14 +12,19 @@
 		<%= flash[:alert] %>
 
 </div>
-	<nav class="navbar navbar-default">
-		<ul class="nav navbar-nav">
-			<li><%= link_to "Home", root_path %></li>
-		</ul>
-	</nav>
+	<header class="navbar navbar-static-top navbar-inverse">
+		<div class='navbar-inner'>
+			<ul class="navbar navbar-nav">
+				<li><a href='/'>Home</a></li>
+				<li><a href='/skills'>Skills</a></li>
+				<li><a hred='/projects'>Projects</a></li>
+			</ul>
+	</header>
+</div>	
 	<div class="container">		
 
-<%= yield %>
+		<%= yield %>
+	</div>	
 
 </body>
 </html>
