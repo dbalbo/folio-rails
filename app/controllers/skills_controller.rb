@@ -15,17 +15,22 @@ class SkillsController < ApplicationController
 		@skill = Skill.new(skill_params)	
 		if @skill.save
 			flash[:notice] = 'Skill has been added, rockstar status = achieved.'
-			resirect_to root_path
+			redirect_to skills_path
 		else
 			render :new
 		end
-	end	
+	end
+
+	def edit
+      @skill = Skill.find(params[:id])
+    end
+
 
 	def update 
 		@skill = Skill.find(params[:id])
 		if@skill.update(skill_params)
 			flash[:notice] = "Skill updated!"
-			redirect_to skill_path(@skill)
+			redirect_to skills_path
 		else
 			render :edit
 		end
@@ -35,12 +40,12 @@ class SkillsController < ApplicationController
 		@skill = Skill.find(params[:id])
 		@skill.destroy
 		flash[:notice] = "Skill = DESTROYED!"
-		redirect_to root_path
+		redirect_to skills_path
 	end
 	
 	private
 	def skill_params
-		params.rewire(:skill).permit(:name, :description);
+		params.require(:skill).permit(:name, :description);
 	end
 end
 							
