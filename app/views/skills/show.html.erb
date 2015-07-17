@@ -8,15 +8,15 @@
 	<h4>Here are some Projects:</h4>
 	<ul>
 		<% @skill.projects.each do |project| %>
-		<li><%= link_to project.name, project_path(project) %></li>
+		<li><%= link_to project.name, project_path(@project) %></li>
 		<% end %>
 	</ul>
 	<% end %>	
 
 </div>
-		<p><%= link_to "Add a Project", new_skill_project_path, %></p>
-		<p><%= link_to "Edit Skill", edit_skill_path(@skill) %></p>
-		<p><%= link_to "Delete this Skill", skill_path(@skill)
+		<p><%= link_to "Add a Project", new_skill_project_path(@skill, @project) %> | </p>
+		<p><%= link_to "Edit Skill", edit_skill_path(@skill) %> | </p>
+		<p><%= link_to "Delete this Skill", skill_path(@skill),
 						:data => {:confirm => "You sure you want to remove a SKILL?",
 							:method => 'delete'} %></p>	
 
