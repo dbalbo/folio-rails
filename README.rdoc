@@ -1,28 +1,28 @@
 == README
+Portfolio(ish)
+by
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Debbie Balbo
+REQUIREMENTS
+Rails v 4.2.1 & POSTGRES v. 9.4.1
 
-Things you may want to cover:
+INSTALLATION
+Run command $ postgres in terminal.
 
-* Ruby version
+In Bash run: $ bundle install
 
-* System dependencies
+$ rake db:create
 
-* Configuration
+$ rake db:migrate
 
-* Database creation
+$ rails server
 
-* Database initialization
+In your browser go to: localhost:3000
 
-* How to run the test suite
+ABOUT
+A Portfolio to be shown to potential employers that will show my skill set and projects Ive done. Work in progress for the Epicodus Spring 2015 class. Have a nice day. 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+COPYRIGHT 2015
+LICENSING
+MIT lisense 
+If you really want this--pleaase take it and use at your leisure/
